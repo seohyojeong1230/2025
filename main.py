@@ -6,7 +6,7 @@ st.set_page_config(page_title="동물 랜덤 도감 🐾", page_icon="🐼", lay
 st.title("🐾 랜덤 동물 도감")
 st.write("버튼을 눌러 오늘의 동물을 만나보세요! 🐶🐱🦊")
 
-# 동물 데이터 (이름 + 설명 + 로컬 이미지 경로)
+# 동물 데이터 (로컬 이미지 사용)
 animals = [
     {
         "name": "레서판다 🐼",
@@ -39,7 +39,7 @@ animals = [
 if st.button("🎲 오늘의 동물 보기"):
     animal = random.choice(animals)
     st.subheader(animal["name"])
-    st.image(animal["img"], use_column_width=True)
+    st.image(animal["img"], use_container_width=True)  # ✅ 수정된 부분
     st.write(animal["desc"])
 
     # 랜덤 메시지
